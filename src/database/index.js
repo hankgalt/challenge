@@ -35,9 +35,17 @@ const getUserItems = (users) => {
 };
 
 const getListOfAgesOfUsersWith = (item) => {
-    const dataAccessMethod = () => {
-        // fill me in :)
-    }
+    const dataAccessMethod = () =>  _.reduce(db.itemsOfUserByUsername, (result, items, uname) => {
+        if (items.includes(item)) {
+            const userInfo = _.find(db.usersById, user => user.username === uname)
+            if (result[userInfo.age]) {
+                result[userInfo.age]++;
+            } else {
+                result[userInfo.age] = 1;
+            }
+        }
+        return result;
+    }, {});
     return mockDBCall(dataAccessMethod);
 }
 
