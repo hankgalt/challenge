@@ -21,6 +21,19 @@ const getUsers = () => {
     return mockDBCall(dataAccessMethod);
 };
 
+const getUserItems = (users) => {
+    const dataAccessMethod = () => users.split(',').reduce((res, user) => {
+        const items = db.itemsOfUserByUsername[user];
+        _.forEach(items, item => {
+            if (!res.includes(item)) {
+                res.push(item);
+            }
+        });
+        return res;
+    }, []);
+    return mockDBCall(dataAccessMethod);
+};
+
 const getListOfAgesOfUsersWith = (item) => {
     const dataAccessMethod = () => {
         // fill me in :)
@@ -30,5 +43,6 @@ const getListOfAgesOfUsersWith = (item) => {
 
 module.exports = {
     getUsers,
+    getUserItems,
     getListOfAgesOfUsersWith
 };
