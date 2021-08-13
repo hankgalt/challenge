@@ -58,9 +58,6 @@ class App extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        // If we have a snapshot value, we've just added new items.
-        // Adjust scroll so these new items don't push the old ones out of view.
-        // (snapshot here is the value returned from getSnapshotBeforeUpdate)
         if (snapshot !== null) {
             if (this.state.users && this.state.users.length > 0 && !this.state.items) {
                 const unames = [];
@@ -200,6 +197,7 @@ class App extends React.Component {
                 <div className="row">
                     {this.renderItems()}
                 </div>
+                <div class="clearfix">&nbsp;</div>
                 <div id="userDemographic" className="row">
                     {this.renderDemographics()}
                 </div>
