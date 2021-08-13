@@ -22,6 +22,8 @@ const start = () => {
     });
 }
 
+app.use(express.static('public'));
+
 module.exports = start;
 
 

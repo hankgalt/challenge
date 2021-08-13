@@ -3,9 +3,50 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <title>Walmex Challenge</title>
 </head>
 <body>
-    Fill me in :)
+    <div id="content" class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <h2>All Users</h2>
+            </div>
+        </div>
+        <div id="userList" class="row">
+            <div class="col-xs-6 col-md-4">
+                <table class="table table-striped">
+                    <thead>
+                        <th>UserName</th>
+                        <th>Age</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <h2>Age Demographic of users with </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-md-2">
+                <select class="form-control" name="items" id="items">
+                    <option disabled hidden selected>Select One</option>
+                </select>
+            </div>
+        </div>
+        <div id="userDemographic" class="row">
+            <div class="col-xs-6 col-md-4">
+                <table class="table table-striped">
+                    <thead>
+                        <th>Age</th>
+                        <th>Count</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
